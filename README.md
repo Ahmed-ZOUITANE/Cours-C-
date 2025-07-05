@@ -377,3 +377,210 @@ int main() {
 }
 ```
 ---
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int secret = rand() % 100 + 1;  // nombre entre 1 et 100
+    int guess;
+    int essais = 0;
+
+    do {
+        cout << "Devine le nombre (1-100) : ";
+        cin >> guess;
+        essais++;
+
+        if (guess < secret) cout << "Trop petit !" << endl;
+        else if (guess > secret) cout << "Trop grand !" << endl;
+        else cout << "Bravo ! Trouvé en " << essais << " essais." << endl;
+
+    } while (guess != secret);
+
+    return 0;
+}
+---
+Parfait Ahmed 🙌 ! On continue alors avec les **boucles en C++** (super importantes 🔁) et on arrive bientôt aux jeux (🎲 Devine le nombre, ✊ Pierre Feuille Ciseaux, etc.). Voici la suite bien claire et commentée :
+
+---
+
+## ✅ **17. While Loops ♾️**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 1;
+
+    while (i <= 5) {
+        cout << "Compteur : " << i << endl;
+        i++; // incrémentation
+    }
+
+    return 0;
+}
+```
+
+🧠 *Utilise `while` quand tu ne sais pas encore combien de fois tu vas boucler.*
+
+---
+
+## ✅ **18. Do While Loops 🔃**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int nombre;
+
+    do {
+        cout << "Tapez un nombre positif : ";
+        cin >> nombre;
+    } while (nombre < 0);
+
+    cout << "Merci, vous avez entré : " << nombre << endl;
+
+    return 0;
+}
+```
+
+📌 *`do-while` s'exécute au moins **une fois**, même si la condition est fausse au départ.*
+
+---
+
+## ✅ **19. For Loops 🔂**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        cout << "i vaut : " << i << endl;
+    }
+
+    return 0;
+}
+```
+
+🧮 *Boucle `for` : idéale pour répéter un bloc un nombre **connu** de fois.*
+
+---
+
+## ✅ **20. Break & Continue 💔**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) continue; // saute 5
+        if (i == 8) break;    // sort à 8
+
+        cout << i << " ";
+    }
+
+    return 0;
+}
+```
+
+---
+
+## ✅ **21. Nested Loops ➿**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int ligne = 1; ligne <= 3; ligne++) {
+        for (int col = 1; col <= 5; col++) {
+            cout << "*";
+        }
+        cout << endl; // retour à la ligne
+    }
+
+    return 0;
+}
+```
+
+🎨 *Affiche un petit rectangle d’étoiles (3 lignes × 5 colonnes)*
+
+---
+
+## ✅ **22. Random Number Generator 🎲**
+
+```cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0)); // initialise l'aléatoire
+
+    int nombre = rand() % 10 + 1; // entre 1 et 10
+    cout << "Nombre aléatoire : " << nombre << endl;
+
+    return 0;
+}
+```
+
+---
+
+## ✅ **23. Random Event Generator 🎁**
+
+```cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+
+    int chance = rand() % 3;
+
+    if (chance == 0) cout << "🎉 Gagné un iPhone !" << endl;
+    else if (chance == 1) cout << "💸 Gagné 100€ !" << endl;
+    else cout << "😢 Rien gagné..." << endl;
+
+    return 0;
+}
+```
+
+---
+
+## ✅ **24. Number Guessing Game ↕️**
+
+```cpp
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int secret = rand() % 100 + 1;  // nombre entre 1 et 100
+    int guess;
+    int essais = 0;
+
+    do {
+        cout << "Devine le nombre (1-100) : ";
+        cin >> guess;
+        essais++;
+
+        if (guess < secret) cout << "Trop petit !" << endl;
+        else if (guess > secret) cout << "Trop grand !" << endl;
+        else cout << "Bravo ! Trouvé en " << essais << " essais." << endl;
+
+    } while (guess != secret);
+
+    return 0;
+}
+```
